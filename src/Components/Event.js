@@ -10,12 +10,16 @@ let styles = {
         width: '50px',
         border: '1px solid black',
         backgroundColor: 'black',
+        borderRadius: 5,
+        zIndex: 10,
     },
 }
+
 
 const eventBoxSource = {
     beginDrag(props, monitor) {
         const { isSuper, serverId, eventId} = props
+
         return { isSuper, serverId, eventId}
 
     },
@@ -45,7 +49,7 @@ class Event extends React.Component {
         const { classes, connectDragSource, event } = this.props;
         const left = event ? event.left : 'auto'
         const display = event ? 'absolute' : 'relative'
-
+        
         return connectDragSource(
                 <div className={classes.root} style={{left: left, position: display}} >
     

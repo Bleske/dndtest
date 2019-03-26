@@ -9,7 +9,15 @@ const styles = {
 		height: '100%',
 		display: 'flex',
 		alignItems: 'center',
+		position: 'relative',
+		justifyContent: 'center',
 	},
+	serverLine: {
+		position: 'absolute',
+		height: 1,
+		borderTop: '1px solid black',
+		width: '95%',
+	}
 }
 
 
@@ -41,6 +49,8 @@ class Target extends React.Component {
 				{server.events.map((event, idx) =>
 					<Event className={classes.event} key={idx} serverId={server.id} event={event} eventId={event.id} isSuper={event.superObject} />
 				)}
+				
+				<div className={classes.serverLine}></div>
 			</div>
 		)
 
